@@ -13,23 +13,21 @@ fn main() -> Result<()> {
 
     let camera = Camera::new(
         peripherals.pins.gpio10, // XCLK
-        peripherals.pins.gpio48, // Y9
-        peripherals.pins.gpio11, // Y8
-        peripherals.pins.gpio12, // Y7
-        peripherals.pins.gpio14, // Y6
-        peripherals.pins.gpio16, // Y5
-        peripherals.pins.gpio18, // Y4
-        peripherals.pins.gpio17, // Y3
-        peripherals.pins.gpio15, // Y2
+        peripherals.pins.gpio15, // d0 (Y2)
+        peripherals.pins.gpio17, // d1 (Y3)
+        peripherals.pins.gpio18, // d2 (Y4)
+        peripherals.pins.gpio16, // d3 (Y5)
+        peripherals.pins.gpio14, // d4 (Y6)
+        peripherals.pins.gpio12, // d5 (Y7)
+        peripherals.pins.gpio11, // d6 (Y8)
+        peripherals.pins.gpio48, // d7 (Y9)
         peripherals.pins.gpio38, // VSYNC
         peripherals.pins.gpio47, // HREF
         peripherals.pins.gpio13, // PCLK
         peripherals.pins.gpio40, // SIOD
         peripherals.pins.gpio39, // SIOC
         esp_idf_sys::camera::pixformat_t_PIXFORMAT_JPEG,
-        // esp_idf_sys::camera::pixformat_t_PIXFORMAT_GRAYSCALE,
-        // esp_idf_sys::camera::framesize_t_FRAMESIZE_UXGA,
-        esp_idf_sys::camera::framesize_t_FRAMESIZE_QQVGA, // 160x120
+        esp_idf_sys::camera::framesize_t_FRAMESIZE_UXGA, // 1600x1200
     )
     .unwrap();
 
