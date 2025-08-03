@@ -2,5 +2,4 @@
 /.embuild
 /target
 
-cfg.toml
 src/wifi_config.rs
