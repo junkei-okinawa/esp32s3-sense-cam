@@ -34,7 +34,12 @@ Webサーバ経由でカメラ映像（Motion JPEG動画）を配信します。
 
 1. 書き込み後、シリアルモニタやログに
     ```
-    esp32s3_sense_cam::wifi_handler: Wifi DHCP info: IpInfo { ip: <camera device ip address>
+    esp32s3_sense_cam::wifi_handler: Wifi DHCP info: IpInfo { ip: <camera device ip address> ...}
     ```
     のようにカメラデバイスのIPアドレスが表示されます。
 2. ブラウザで `http://<ip_address>/camera.mjpeg` にアクセスすると、Webカメラの動画（Motion JPEG）が表示されます。
+
+## Reference
+esp32-camera のピン指定や PSRAM 有効化のために sdkconfig.defaults で指定する key value がわかりづらく苦労しました。
+- [Seeed Studio XIAO ESP32S3 Senseでのカメラ使用法](https://wiki.seeedstudio.com/ja/xiao_esp32s3_camera_usage/)
+- [esp-rs/esp-idf-sys issue#177](https://github.com/esp-rs/esp-idf-sys/issues/177)
